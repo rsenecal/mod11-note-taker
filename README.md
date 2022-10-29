@@ -21,7 +21,7 @@
 <h3 align="center">Note Taker</h3>
 
   <p align="center">
-    project_description
+    Note Taker
     <br />
     <a href="https://github.com/rsenecal/mod11-note-taker"><strong>Explore the docs »</strong></a>
     <br />
