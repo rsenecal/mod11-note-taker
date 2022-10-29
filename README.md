@@ -67,7 +67,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img width="1491" alt="note-take-home-page" src="https://user-images.githubusercontent.com/50510/198796654-01b1d345-4054-457c-93a7-f7d7145e2a59.png">
+
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `rsenecal`, `mod11-note-taker`, `@roodysenecal`, `linkedin_username`, `email_client`, `roodysenecal@gamil.com`, `Note Taker`, `project_description`
 
