@@ -1,12 +1,10 @@
 const express = require('express');
 const { readAndAppend, readFromFile } = require('./helpers/fsUtils');
-const { v4: uuidv4 } = require('./helpers/uuid');
+const { v4: uuidv4 } = require('uuid');
 
 const { fstat } = require('fs');
 const fs = require('fs'); 
 const path = require('path');
-
-
 
 
 
@@ -37,15 +35,18 @@ app.get('/api/notes', (req, res) => res.json(notes));
 //   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 // });
 
+
+
 // POST Route for a new UX/UI tip
 app.post('/api/notes', (req, res) => {
   const { title, text } = req.body;
-
+  const noteId = uuidv4();
+  console.log(`note id = ${noteId}`)
   if (req.body) {
     const newNote = {
       title,
       text,
-      // tip_id: uuid(),
+      noteId
     };
 
     readAndAppend(newNote, './db/db.json');
