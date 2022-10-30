@@ -30,12 +30,6 @@ app.get('/notes',  (req, res) => {
 app.get('/api/notes', (req, res) => res.json(notes));
 
 
-// GET Route for retrieving all the tips
-// app.get('/api/notes', (req, res) => {
-//   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
-// });
-
-
 
 // POST Route for a new UX/UI tip
 app.post('/api/notes', (req, res) => {
@@ -50,7 +44,7 @@ app.post('/api/notes', (req, res) => {
     };
 
     readAndAppend(newNote, './db/db.json');
-    res.json(`Tip added successfully 🚀`);
+    res.json(`Note added successfully 🚀`);
   } else {
     res.error('Error in adding tip');
   }
@@ -58,6 +52,29 @@ app.post('/api/notes', (req, res) => {
 
 
 // ******************************
+
+
+app.delete('/api/notes/:id', function(req, res) {
+
+  console.info ("USER CLICKED DELETE");
+  var indexOfNote = notes.map(function(item) { return item.noteId; }).indexOf(req.params.noteId); //find the index of :id
+  var indexOfNote2 = req.params.noteId;
+  console.log(`Note ID: ${indexOfNote} and ${indexOfNote2}`)
+
+  // var indexOfCouseInJson = json.map(function(item) { return item.noteId; }).indexOf(req.params.noteId); //find the index of :id
+  //   if(indexOfCouseInJson === -1) {
+  //     res.statusCode = 404;
+  //     return res.send('Error 404: No quote found');
+  //   }
+  
+  //   var result = json.splice(indexOfCouseInJson,1);
+  //   fs.writeFile(jsonFilePath, JSON.stringify(result), function(err){
+  //    if(err) throw err;
+  //    res.json(true);
+  //  });
+  
+  });
+
 
 
 app.get('*',  (req, res) => {
